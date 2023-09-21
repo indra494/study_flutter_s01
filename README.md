@@ -3,13 +3,14 @@
 - project > android > gradle > wrapper > gradle-wrapper.properties 
   - gradle-8.1-all.zip
 - open jdk 20 
+- 문제 시 다시 module import(gradle프로젝트로)
 
 2. reference site
-- https://flutter.dev
-- https://flutterstudio.app
-- https://material.io
-- https://dart.dev/null-safety
-- https://dart-lang.github.io/linter/lints
+- flutter 공식사이트 : https://flutter.dev
+- flutter 위젯 확인 : https://flutterstudio.app
+- material ui 설명 : https://material.io
+- dart null-safety : https://dart.dev/null-safety
+- dart lint : https://dart-lang.github.io/linter/lints
 
 3. dart study
 - /dart_study 참고
