@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "778844386799",
+    "project_id": "study-flutter-s01",
+    "storage_bucket": "study-flutter-s01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778844386799:android:1cf1b8510cad93a645f21a",
+        "android_client_info": {
+          "package_name": "com.example.study_flutter_s01"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDlvg9RYv3-mCS764lAJtq1cx_EuTstGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

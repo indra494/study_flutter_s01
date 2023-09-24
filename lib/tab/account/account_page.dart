@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'account_model.dart';
+
 class AccountPage extends StatelessWidget {
+
   const AccountPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final model = AccountModel();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Instagram clone'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              model.logout();
+            },
             icon: const Icon(Icons.exit_to_app),
           )
         ],
@@ -24,11 +31,11 @@ class AccountPage extends StatelessWidget {
               children: [
                 Stack(
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       width: 80,
                       height: 80,
                       child: CircleAvatar(
-                        backgroundImage: NetworkImage('https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2023/03/23/8733be6a-f9a7-4ba8-a5bf-6ecfe60d63af.jpg'),
+                        backgroundImage: NetworkImage(model.getProfileImageUrl()),
                       ),
                     ),
                     Container(
@@ -60,8 +67,8 @@ class AccountPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 8),
-                const Text('박보영',
-                  style: TextStyle(
+                Text(model.getNickName(),
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   )
@@ -69,7 +76,7 @@ class AccountPage extends StatelessWidget {
               ],
             ),
 
-            Column(
+            const Column(
               children: [
                 Text('3',
                   style: TextStyle(fontSize: 18),
@@ -79,7 +86,7 @@ class AccountPage extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
+            const Column(
               children: [
                 Text('0',
                   style: TextStyle(fontSize: 18),
@@ -89,7 +96,7 @@ class AccountPage extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
+            const Column(
               children: [
                 Text('0',
                   style: TextStyle(fontSize: 18),

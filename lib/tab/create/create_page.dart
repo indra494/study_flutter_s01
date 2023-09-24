@@ -1,7 +1,19 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class CreatePage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:study_flutter_s01/tab/create/create_model.dart';
+
+class CreatePage extends StatefulWidget {
   const CreatePage({Key? key}) : super(key: key);
+
+  @override
+  State<CreatePage> createState() => _CreatePageState();
+}
+
+class _CreatePageState extends State<CreatePage> {
+  final model = CreateModel();
+
+  File? _image;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +22,9 @@ class CreatePage extends StatelessWidget {
         title: const Text('새 게시물'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+
+            },
             icon: const Icon(Icons.send),
           ),
         ]
@@ -39,10 +53,15 @@ class CreatePage extends StatelessWidget {
                 ),
                 */
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      _image = await model.getImage();
+
+                      setState(() {});
+                    },
                     child: const Text('이미지 선택')
                 ),
-                Image.network('https://thumb.mt.co.kr/06/2019/11/2019111312544857738_1.jpg/dims/optimize/',
+                if( _image != null) Image.file(
+                  _image!,
                   width: 300,
                 ),
             ],
@@ -51,5 +70,4 @@ class CreatePage extends StatelessWidget {
       )
     );
   }
-
 }
