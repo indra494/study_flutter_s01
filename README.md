@@ -44,6 +44,8 @@
 - flutter pub add firebase_core 명령어 실행하면 firebase_options.dart 파일에 자동으로 dependency가 추가된다.
 - flutter pub add firebase_auth
 - flutter pub add flutterfire_ui
+- flutter pub add cloud_firestore
+- flutter pub add firebase_storage
 
 8. project ':sign_in_with_apple' -> org.jetbrains.kotlin: 오류 시 아래의 방법으로 해결.
 - /Users/indra/.pub-cache/hosted/pub.dev/sign_in_with_apple-3.3.0/android/build.gradle 아래와 같이 수정

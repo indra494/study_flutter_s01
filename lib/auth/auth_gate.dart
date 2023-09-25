@@ -19,11 +19,24 @@ class AuthGate extends StatelessWidget {
               ],
 
               headerBuilder: (context, constraints, _) {
-                return const Center(
-                    child: Text('INDRA'
-                      , style: TextStyle(fontSize: 40),
-                    )
-                );
+                return DecoratedBox(
+                  decoration: const BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  child : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height:70),
+                    Image.asset(
+                      'assets/images/logo.png',
+                      scale: 1,
+                    ),
+                    const SizedBox(width:10),
+                    const Text('Indragram',
+                      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54, fontSize: 25),
+                    ),
+                  ],
+                ));
               },
 
           );

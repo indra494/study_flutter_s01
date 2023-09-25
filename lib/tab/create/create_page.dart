@@ -13,7 +13,9 @@ class CreatePage extends StatefulWidget {
 class _CreatePageState extends State<CreatePage> {
   final model = CreateModel();
 
+  final _titleTextController = TextEditingController();
   File? _image;
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +24,26 @@ class _CreatePageState extends State<CreatePage> {
         title: const Text('새 게시물'),
         actions: [
           IconButton(
-            onPressed: () {
+            onPressed: () async {
+              if(_image != null && _titleTextController.text.isNotEmpty) {
 
+                setState(() {
+                  isLoading = true;
+                });
+
+                await model.uploadPost(
+                  _titleTextController.text,
+                  _image!,
+                );
+
+                setState(() {
+                  isLoading = true;
+                });
+
+                if(mounted) {
+                  Navigator.pop(context);
+                }
+              }
             },
             icon: const Icon(Icons.send),
           ),
@@ -35,6 +55,7 @@ class _CreatePageState extends State<CreatePage> {
           child: Column(
             children: [
               TextField(
+                controller: _titleTextController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
@@ -52,6 +73,7 @@ class _CreatePageState extends State<CreatePage> {
                   child: Placeholder(),
                 ),
                 */
+                if(isLoading) const CircularProgressIndicator(),
                 ElevatedButton(
                     onPressed: () async {
                       _image = await model.getImage();
